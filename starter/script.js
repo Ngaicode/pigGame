@@ -26,14 +26,42 @@ const holdCurrentScoreBtn = document.querySelector(".btn--hold");
 
 // ------------STARTING CONDITIONS------------
 // selecting the elements with the score and setting it back to zero at the start of the game
-score0Element.textContent = 0;
-score1Element.textContent = 0;
+// score0Element.textContent = 0;
+// score1Element.textContent = 0;
 
-let scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-// a variable that stores the state of the game
-let playing = true;
+// let scores = [0, 0];
+// let currentScore = 0;
+// let activePlayer = 0;
+// // a variable that stores the state of the game
+// let playing = true;
+let playing;
+let scores;
+let currentScore;
+let activePlayer;
+
+// ------------STARTING CONDITIONS------------
+// selecting the elements with the score and setting it back to zero at the start of the game
+const initializeGame = function () {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+
+  // a variable that stores the state of the game
+  playing = true;
+
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  player0Currentscore.textContent = 0;
+  player1Currentscore.textContent = 0;
+
+  diceImageElement.classList.add("hidden");
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+};
+// initialize starting conditions for the game
+initializeGame();
 
 const switchPlayer = function () {
   //setting the currentscore back to zero when a player rolls a 1 ie,this is before we switch to a different player
@@ -90,7 +118,7 @@ holdCurrentScoreBtn.addEventListener("click", function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     // 2.check if score >=100
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       //finish the game
       playing = false;
       diceImageElement.classList.add("hidden");
@@ -107,3 +135,6 @@ holdCurrentScoreBtn.addEventListener("click", function () {
     }
   }
 });
+
+// reload game
+newGameBtn.addEventListener("click", initializeGame);
