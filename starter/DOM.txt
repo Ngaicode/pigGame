@@ -1,0 +1,71 @@
+DOM methods
+
+DOM methods allow for programmatic access to the DOM tree, with them you can change the document's structure style and content.
+
+.querSelector()
+expects a string with a valid CSS selector as the argument
+It returns the first element in document object that matches the specified selector
+~~~Example~~~
+document.querySelector(".player--0");
+
+
+.querSelectorAll()
+expects a string with a valid CSS selector as the argument
+it returns a Nodelist (basically works like an array) representing a list of the  document's elements that match the specified selector.
+~~~Example~~~
+ document.querySelectorAll(".player--0");
+
+.getElementByID()
+expects a string with a valid ID name as the argument
+returns an element in the object whose ID property matches the specified string(ID name). The argument is a string that contains the ID name
+~~~Example~~~
+document.getElementById("score--1");
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Classlist
+The .classlist property is a read-only property that returns a collection of the class attributes of an element
+
+Classlist methods
+.add()
+adds the given argument (which should be a string) as a class to the classlist of the selected element object.
+it will the argument as a class if absent ,but if the class already exists on the element ,it wont add anything
+~~~Example~~~
+  diceImageElement.classList.add("hidden");
+
+
+
+.remove()
+It removes the specified classlist (the argument of the method) from the class attributes  of the  chosen respective element
+~~~Example~~~
+  player0El.classList.remove("player--winner");
+
+
+
+.toggle() adds the specified clas to the class attributes of an element .If the class attribute already exists on the element,it will remove it instead
+~~~Example~~~
+  player0El.classList.toggle("player--active");
+
+
+
+.contains()
+returns a boolean value ,true if the element contains the specified class,it returns false  if the element does not contain the class
+~~~Example~~~
+  player0El.classList.contains("player--active");
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+----CHANGING IN-LINE CSS STYLES-----
+-----.style property-----
+The style property is a read only property that returns the the in-line style of an element.
+we can use it to set new style properties ,by selecting the exact style property that we want to change (in camel case ) then assigning a css value to it('as a string')
+
+~~~Example~~~
+  player0El.style.width = '50px'
+
+
+
+
