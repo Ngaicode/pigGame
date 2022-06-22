@@ -2,6 +2,7 @@
 const apiData = {
   url: "https://pokeapi.co/api/v2/",
   type: "pokemon",
+  //   if you change the ID,it'll change the pokemon displayed
   id: "25",
 };
 // deconstructing the apiData object
