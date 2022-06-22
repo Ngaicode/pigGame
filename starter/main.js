@@ -1,4 +1,5 @@
 "use strict";
+// all the code in this file simply works to fetch data from the pokemon API available at pokeapi.co
 const apiData = {
   url: "https://pokeapi.co/api/v2/",
   type: "pokemon",
