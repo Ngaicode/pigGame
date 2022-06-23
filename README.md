@@ -2,6 +2,8 @@
 
 ## By Ngaicode
 
+**You can find the project hosted at [Roll-the-dice](https://ngaicode.github.io/roll-the-dice/)**
+
 ---
 
 ## A simple html ,css and javascript dice game
