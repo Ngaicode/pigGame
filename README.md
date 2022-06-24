@@ -12,7 +12,7 @@
 
 _One common pitfall of modern browser games is that they are heavily resource reliant_
 
-> What my project aims to do is provide a simple fun multiplayerthat doesn't put much strain on the computer's memory and cpu
+> What my project aims to do is provide a simple fun multiplayer game that doesn't put much strain on the computer's memory and cpu
 
 > One wins the game by being the first one to roll up to 50, however, whenever a player rolls a one, their current accumulated score gets wiped and the game switches to the next player. If the player chooses to hold their score, it gets added to their total score, and the game switches to a different player.
 
