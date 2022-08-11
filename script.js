@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // reinforcing knowledge is one of the most important thing that you can do to learn
 
@@ -12,29 +12,29 @@
 // AS ALWAYS ,WE START BY SELECTING THE ELEMENTS THAT WE WANT TO USE AND STORE THEM IN VARIABLES SO WE CAN EASILY USE THEM LATER
 //  alternate syntax
 // selecting the different sections for each player
-const player0El = document.querySelector(".player--0");
-const player1El = document.querySelector(".player--1");
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
 
 // selecting the paragraph element that displays the final  score for each player
-const score0Element = document.querySelector("#score--0");
+const score0Element = document.querySelector('#score--0');
 // when selecting elements using their respective ID names ,we can alternatively use the  getElementById() method
-const score1Element = document.getElementById("score--1");
+const score1Element = document.getElementById('score--1');
 
 // selecting the paragraph element with that displays the current score of each individual element
-const player0Currentscore = document.getElementById("current--0");
-const player1Currentscore = document.getElementById("current--1");
+const player0Currentscore = document.getElementById('current--0');
+const player1Currentscore = document.getElementById('current--1');
 
 // selecting the image element that displays the rolled dice value
-const diceImageElement = document.querySelector(".dice");
+const diceImageElement = document.querySelector('.dice');
 
 // selecting the roll the dice button
-const rollDiceBtn = document.querySelector(".btn--roll");
+const rollDiceBtn = document.querySelector('.btn--roll');
 
 // selecting the new game button
-const newGameBtn = document.querySelector(".btn--new");
+const newGameBtn = document.querySelector('.btn--new');
 
 // selecting the 'hold current score' button
-const holdCurrentScoreBtn = document.querySelector(".btn--hold");
+const holdCurrentScoreBtn = document.querySelector('.btn--hold');
 
 // ------------STARTING CONDITIONS------------
 // selecting the elements with the score and setting it back to zero at the start of the game
@@ -70,15 +70,15 @@ const initializeGame = function () {
 
   // hiding the rolled dice image
   // we are adding the css class 'hidden' that is styled to set the display to none
-  diceImageElement.classList.add("hidden");
+  diceImageElement.classList.add('hidden');
 
   // nobody is the winner at the begining of the game so removing these classes will get rid of the corresponding css style
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player--winner");
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
 
   // starting with player 1 as the active player
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 };
 // calling this function to initialize starting conditions for the game
 initializeGame();
@@ -95,19 +95,19 @@ const switchPlayer = function () {
 
   // adding or removing css classes allows us to manipulate their respective css styles by activating or deactivating them depending on wether a style is present or not
   // the toggle()method will add the class if it does not exist on the element;and if the class exists,it will remove it
-  player0El.classList.toggle("player--active");
-  player1El.classList.toggle("player--active");
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
 };
 
 //implementing rolling dice functinality
-rollDiceBtn.addEventListener("click", function () {
+rollDiceBtn.addEventListener('click', function () {
   // first we start off by checking wether if the players can stil play
   // in short,this event handler will only be triggered if the players can still play ,ie nobody has won and playing === true
   if (playing) {
     // 1.generating a random dice roll
     const dice = Math.trunc(Math.random() * 6) + 1;
     // 2.display dice image
-    diceImageElement.classList.remove("hidden");
+    diceImageElement.classList.remove('hidden');
     //   dynamically updating the image of the rolled dice number by changing the src attribute of the image element depending on the rolled dice value
     diceImageElement.src = `dice-${dice}.png`;
     //   3.check if a player has rolled a 1;if true,switch to the next player
@@ -136,7 +136,7 @@ rollDiceBtn.addEventListener("click", function () {
   }
 });
 
-holdCurrentScoreBtn.addEventListener("click", function () {
+holdCurrentScoreBtn.addEventListener('click', function () {
   // first we start off by checking wether if the players can stil play
   // in short,this event handler will only be triggered if the players can still play ,ie nobody has won and playing === true
   // we only want this event andler to work if the players can still play
@@ -153,17 +153,17 @@ holdCurrentScoreBtn.addEventListener("click", function () {
       playing = false;
 
       // removes the displayed dice image as soon as the active player wins the game
-      diceImageElement.classList.add("hidden");
+      diceImageElement.classList.add('hidden');
 
       // adding the player--winner class enabling us to style the  respective winner's side with the class' corresponding css styles
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.add("player--winner");
+        .classList.add('player--winner');
 
       // removing the player--active class and it's corresponding css styles from the winning active player
       document
         .querySelector(`.player--${activePlayer}`)
-        .classList.remove("player--active");
+        .classList.remove('player--active');
     } else {
       //if the player holds the score and it is bellow 100,we  switch to the next player
       switchPlayer();
@@ -172,4 +172,4 @@ holdCurrentScoreBtn.addEventListener("click", function () {
 });
 
 // reload game when the new game button is pressed
-newGameBtn.addEventListener("click", initializeGame);
+newGameBtn.addEventListener('click', initializeGame);
