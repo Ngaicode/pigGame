@@ -173,3 +173,6 @@ holdCurrentScoreBtn.addEventListener('click', function () {
 
 // reload game when the new game button is pressed
 newGameBtn.addEventListener('click', initializeGame);
+
+
+console.log("meow")
