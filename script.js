@@ -135,7 +135,6 @@ rollDiceBtn.addEventListener('click', function () {
     }
   }
 });
-
 holdCurrentScoreBtn.addEventListener('click', function () {
   // first we start off by checking wether if the players can stil play
   // in short,this event handler will only be triggered if the players can still play ,ie nobody has won and playing === true
@@ -174,5 +173,4 @@ holdCurrentScoreBtn.addEventListener('click', function () {
 // reload game when the new game button is pressed
 newGameBtn.addEventListener('click', initializeGame);
 
-
-console.log("meow")
+console.log('meow');
