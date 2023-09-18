@@ -7,7 +7,7 @@ const apiData = {
   id: '25',
 };
 // deconstructing the apiData object
-// when destructuring objects ,the variable names that we use have to be similar to the property  name of the value that we want
+// when destructuring objects ,the variable names that we use have to be similar to the property  name of the value that we want to destructure from the object
 const { url, type, id } = apiData;
 
 const apiUrl = `${url}${type}/${id}`;
